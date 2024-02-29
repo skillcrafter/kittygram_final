@@ -15,9 +15,9 @@ services:
     image: olga1611/kittygram_backend
     env_file: .env
     volumes:
-      - static:/static
-      - media:/media
-    depends_on:
+      - static:/backend_static
+      - media:/app/media/
+    depends_on: 
       - db
   frontend:
     image: olga1611/kittygram_frontend
@@ -29,9 +29,7 @@ services:
     image: olga1611/kittygram_gateway
     env_file: .env
     volumes:
-      - static:/static
-      - media:/media
+      - static:/static/
+      - media:/app/media/
     ports:
       - 9000:80
-    depends_on:
-      - backend
