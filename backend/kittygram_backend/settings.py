@@ -2,10 +2,11 @@
 import os
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 APP_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', default=get_random_secret_key())
+SECRET_KEY = os.getenv('SECRET_KEY', default='123')
 
 DEBUG = os.getenv('DEBUG', False) == 'True'
 
